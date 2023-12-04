@@ -1,0 +1,32 @@
+services:
+  nginx:
+    build: 
+      context: ./nginx
+      dockerfile: Dockerfile
+    image: nginx-lt:01
+    container_name: nginx-lt1
+    ports:
+      - 8080:80
+    volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d
+      - ../:/var/www
+    networks:
+      - lar
+  app:
+    build:
+      context: ./php
+      dockerfile: Dockerfile
+      args:
+        user: sammy
+        uid: 1000
+    image: php-fpm-test:01
+    container_name: php-fpm-lar1
+    volumes:
+      - ../:/var/www
+    networks:
+      - lar  
+
+networks:
+  lar:
+    driver: bridge
+  
