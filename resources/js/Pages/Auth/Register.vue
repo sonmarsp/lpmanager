@@ -11,6 +11,7 @@ import TextInput from '@/Components/TextInput.vue';
 const form = useForm({
     name: '',
     email: '',
+    phone: '',
     password: '',
     password_confirmation: '',
     terms: false,
@@ -58,6 +59,19 @@ const submit = () => {
                 />
                 <InputError class="mt-2" :message="form.errors.email" />
             </div>
+
+            <div class="mt-4">
+                <InputLabel for="phone" value="Phone" />
+                <TextInput
+                    id="phone"
+                    v-model="form.phone"
+                    type="phone"
+                    class="mt-1 block w-full"
+                    required
+                />
+                <InputError class="mt-2" :message="form.errors.phone" />
+            </div>
+
 
             <div class="mt-4">
                 <InputLabel for="password" value="Password" />

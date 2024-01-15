@@ -14,6 +14,7 @@ defineProps({
 });
 
 const form = useForm({
+    loginname: '',
     email: '',
     password: '',
     remember: false,
@@ -43,11 +44,11 @@ const submit = () => {
 
         <form @submit.prevent="submit">
             <div>
-                <InputLabel for="email" value="Email" />
+                <InputLabel for="email" value="Email/Username/Phone" />
                 <TextInput
                     id="email"
-                    v-model="form.email"
-                    type="email"
+                    v-model="form.loginname"
+                    type="text"
                     class="mt-1 block w-full"
                     required
                     autofocus
