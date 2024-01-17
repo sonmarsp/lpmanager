@@ -21,6 +21,8 @@ services:
         uid: 1000
     image: php-fpm-test:01
     container_name: php-fpm-lar1
+    ports:
+      - 5173:5173
     volumes:
       - ./:/var/www
     networks:
