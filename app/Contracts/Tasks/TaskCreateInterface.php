@@ -30,6 +30,14 @@ interface TaskCreateInterface
         string $statusTask,
     ); 
 
+    /**
+     * Получение набора данных и создания заявки
+     * @param mixed $data - набор данных json | collection
+     *
+     * @return void - пока не определен
+     */
+    public function taskСollector(mixed $data);
+
 
 }
 

@@ -15,7 +15,7 @@ class CreateTaskController extends Controller
     public function createTaskCr(CreateTaskRequest $createTaskRequest, TaskCreateInterface $taskCreateInterface)
     {
 
-        
+        $res = $taskCreateInterface->taskСollector($createTaskRequest);
 
     }
 }
