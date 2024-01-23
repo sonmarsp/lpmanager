@@ -13,8 +13,9 @@ class AppServiceProvider extends ServiceProvider
     public function register(): void
     {
         $this->app->bind(\App\Contracts\Tasks\TaskCreateInterface::class, \App\Services\Tasks\CreateTask::class);
+        $this->app->bind(\App\Contracts\Tasks\TaskUpdateInterface::class, \App\Services\Tasks\UpdateTask::class);
+        
         $this->app->bind(\App\Contracts\Projects\ProjectCreateInterface::class, \App\Services\Projects\CreateProject::class);
-
 
     }
 
