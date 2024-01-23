@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
             $table->string('project')->comment('Название проекта');
+            $table->string('short_name_project')->comment('Короткое название для коммитов');
             $table->text('description_project')->nullable()->comment('Описание проекта');
             $table->timestamps();
         });

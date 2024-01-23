@@ -22,6 +22,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::middleware('auth:sanctum')->group( function (){
 
     Route::post('/createtask', [App\Http\Controllers\Tasks\CreateTaskController::class, 'createTaskCr']);
-
+    Route::post('/createproject', [App\Http\Controllers\Projects\CreateProjectController::class, 'createProjectCr']);
 
 });
